@@ -1,0 +1,17 @@
+h2 {
+    line-height: 1.5;
+}
+
+.flex-list {
+    display: flex;
+    max-width: 700%;
+}
+
+.flex-list div {
+    margin: 0 auto;
+}
+
+.flex-list li {
+    font-size: 22px;
+    color: #000;
+}

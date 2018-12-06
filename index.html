@@ -1,49 +1,254 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>DOM Events</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+    <title>DOM Events</title>
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+    <link rel="stylesheet" href="css/custom/styles.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h1>DOM Events</h1>
+                <h6>by Anna Kolesnikova</h6>
+            </section>
+            <section>
+                <section>
+                    <h2>Triggers</h2>
+                    <p>user actions</p>
+                    <ul>
+                        <li>Mouse</li>
+                        <li>Keyboard</li>
+                        <li>Touch</li>
+                        <li>Joystick</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <div class="flex-list">
+                        <div>
+                            <h4>Mouse events</h4>
+                            <ul>
+                                <li>click</li>
+                                <li>contextmenu</li>
+                                <li>dbclick</li>
+                                <li>mousedown</li>
+                                <li>mouseenter</li>
+                                <li>mouseleave</li>
+                                <li>mouseout</li>
+                                <li>mouseover</li>
+                                <li>mouseup</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Keyboard events</h4>
+                            <ul>
+                                <li>keydown</li>
+                                <li>keypress</li>
+                                <li>keyup</li>
+                            </ul>
+                            <h4>Drag events</h4>
+                            <ul>
+                                <li>drag</li>
+                                <li>dragend</li>
+                                <li>dragenter</li>
+                                <li>dragover</li>
+                                <li>dragleave</li>
+                                <li>dragstart</li>
+                                <li>drop</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Focus events</h4>
+                            <ul>
+                                <li>focus</li>
+                                <li>blur</li>
+                            </ul>
+                            <h4>Touch events</h4>
+                            <ul>
+                                <li>touchstart</li>
+                                <li>touchmove</li>
+                                <li>touchend</li>
+                                <li>touchcancel</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <h2>Event Handling</h2>
+                </section>
+                <section>
+                    <h4>Event Handling Models</h4>
+                    <ul>
+                        <li>inline</li>
+                        <li>traditional</li>
+                        <li>W3C</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Inline Event Handling Model</h3>
+                </section>
+                <section>
+                    <h3>Traditional Event Handling Model</h3>
+                </section>
+                <section>
+                    <h3>W3C</h3>
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <h2>Event Object</h2>
+                    <p>Event Object - argument passed to event handler</p>
+                </section>
+                <section>
+                    <h3>Event Target</h3>
+                    <p>Event Object - argument passed to event handler</p>
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <h3>Event DOM Trip</h3>
+                    <ul>
+                        <li>capturing: document - e.target</li>
+                        <li>bubbling: e.target - document</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Event</h3>
+                    <div class="flex-list">
+                        <div>
+                            <h5>properties</h5>
+                            <ul>
+                                <li>target</li>
+                                <li>currentTarget</li>
+                                <li>bubbles</li>
+                                <li>eventPhase</li>
+                                <li>type</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5>methods</h5>
+                            <ul>
+                                <li>preventDefault</li>
+                                <li>stopPropagation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <section>
+                <div class="flex-list">
+                    <div>
+                        <h4>Mouse Event</h4>
+                        <p>properties</p>
+                        <ul>
+                            <li>altKey</li>
+                            <li>shiftKey</li>
+                            <li>button</li>
+                            <li>clientX</li>
+                            <li>clientY</li>
+                            <li>screenX</li>
+                            <li>screenY</li>
+                        </ul>
+                        <h4>Drag Events</h4>
+                        <p>properties</p>
+                        <ul>
+                            <li>dataTransfer</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Keyboard Event</h4>
+                        <p>properties</p>
+                        <ul>
+                            <li>altKey</li>
+                            <li>shiftKey</li>
+                            <li>key</li>
+                            <li>keyCode</li>
+                        </ul>
+                        <h4>Touch Events</h4>
+                        <p>properties</p>
+                            <li>touches</li>
+                            <li>targetTouches</li>
+                            <li>changedTouches</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </section>
+            <section>
+                <h3>Event Delegation</h3>
+                <p>------code-----</p>
+                <ul>
+                    <li>add eventHandler to each item</li>
+                    <li>handle dynamicly created items</li>
+                    <li>remove eventHandlers when item removed</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Use Event Delegation Insted</h3>
+                <p>------code-----</p>
+                <ul>
+                    <li>listen event on parent</li>
+                    <li>all child events bubble to parent</li>
+                    <li>check e.target</li>
+                    <li>profit!</li>
+                </ul>
+            </section>
+            <section>
+                <h4>Thank you!</h4>
+            </section>
+        </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+        // More info about config & dependencies:
+        // - https://github.com/hakimel/reveal.js#configuration
+        // - https://github.com/hakimel/reveal.js#dependencies
+        Reveal.initialize({
+            dependencies: [{
+                src: 'plugin/markdown/marked.js'
+            }, {
+                src: 'plugin/markdown/markdown.js'
+            }, {
+                src: 'plugin/notes/notes.js',
+                async: true
+            }, {
+                src: 'plugin/highlight/highlight.js',
+                async: true,
+                callback: function() {
+                    hljs.initHighlightingOnLoad();
+                }
+            }]
+        });
+    </script>
+</body>
+
 </html>
